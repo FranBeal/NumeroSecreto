@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- Declaração do tipo de documento e idioma da página -->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Define o conjunto de caracteres como UTF-8 -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura a página para ser responsiva -->
+
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <!-- Importa a biblioteca para síntese de voz -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Realiza a pré-conexão para carregar as fontes mais rapidamente -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Importa fontes do Google Fonts -->
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Conecta o arquivo de estilos CSS externo -->
+
+    <title>Secret Number Game</title>
+    <!-- Define o título da página que aparece na aba do navegador -->
+</head>
+
+<body>
+    <div class="container">
+        <!-- Container principal para organizar o layout -->
+        <div class="container__conteudo">
+            <!-- Container para o conteúdo principal -->
+            <div class="container__informacoes">
+                <!-- Container para os textos e entradas -->
+
+                <div class="container__texto">
+                    <!-- Container para o título e descrição -->
+                    <h1>Jogo do número secreto</h1>
+                    <!-- Cabeçalho principal do jogo -->
+                    <p class="texto__paragrafo">Escolha um número entre 1 e 10</p>
+                    <!-- Texto explicativo do jogo -->
+                </div>
+
+                <input type="number" id="chute" min="1" max="10" class="container__input">
+                <!-- Campo para o jogador inserir o número -->
+
+                <label id="mensagem" class="container__label"></label>
+                <!-- Elemento para exibir mensagens ao usuário -->
+
+                <div class="chute container__botoes">
+                    <!-- Botões de interação -->
+                    <button onclick="verificarChute()" id="btnChutar" class="container__botao">Chutar</button>
+                    <!-- Botão para enviar o palpite -->
+
+                    <button onclick="reiniciarJogo()" id="btnReiniciar" class="container__botao" disabled>Novo jogo</button>
+                    <!-- Botão para reiniciar o jogo, desativado inicialmente -->
+                </div>
+            </div>
+
+            <img class="container__imagem-interrogacao" src="./img/Qual_Nro.webp" alt="Um círculo com vários pontos de interrogação" />
+            <!-- Imagem decorativa ao lado dos elementos -->
+        </div>
+    </div>
+
+    <script src="app.js" defer></script>
+    <!-- Conecta o arquivo JavaScript externo -->
+</body>
+
+</html>

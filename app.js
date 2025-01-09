@@ -13,7 +13,7 @@ let numeroTentativas;
 // Função para exibir mensagens na tela
 function exibirMensagem(mensagem, classe = '') {
     mensagemLabel.textContent = mensagem; // Exibe a mensagem no rótulo
-    mensagemLabel.className = `container__label ${classe}`; // Adiciona classes para estilização
+    mensagemLabel.className = `container__label__label ${classe}`; // Adiciona classes para estilização
     responsiveVoice.speak(mensagem, 'Brazilian Portuguese Female', { rate: 1.2 }); // Usa síntese de voz
 }
 

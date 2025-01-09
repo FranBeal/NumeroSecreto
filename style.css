@@ -1,17 +1,33 @@
+/*Resetar estilização padrão do navegador*/
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
     color: white;
+    /*Define a cor do texto como branca para todos os elementos.*/
+}
+
+:root{
+    --font-family: 'Inter', sans-serif;
+    --font-family-titulo: 'Chakra Petch', sans-serif;
+    --botao--azul-hover: #348efb;
 }
 
 body {
-    background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /*100% da altura da tela, do viewport height*/
+    box-sizing: border-box;
+    /*Define o modelo de caixa para todos os elementos como border-box, 
+    tornando o controle do tamanho mais previsível. Ele encolhe o elemento filho para caber dentro do pai.
+    Por padrão, o modelo de caixa do CSS utiliza content-box:
+      - A largura e altura de um elemento são aplicadas apenas ao conteúdo.
+      - As bordas e o preenchimento (padding) são adicionados à largura e altura.
+    Quando usamos box-sizing: border-box;, isso muda o comportamento:
+      - A largura e altura do elemento incluem o conteúdo, o preenchimento (padding) e as bordas.
+      - Isso facilita o controle do tamanho total do elemento, especialmente quando queremos evitar que o padding e a borda "empurrem" o tamanho do elemento para além do especificado.*/
+    background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
 }
+
+/*Tutorial sobre flexbox: A complete Guide to Flexbox*/
 
 body::before {
     background-image: url("img/code.png");
@@ -26,11 +42,13 @@ body::before {
 }
 
 .container {
-    width: 80%;
-    height: 80%;
+    margin: 10%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    width: 80%;
+    height: 80%;
     border-radius: 24px;
     border: 1px solid #1875E8;
     box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
@@ -39,40 +57,33 @@ body::before {
     position: relative;
 }
 
-.container__conteudo {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-}
 
 .container__informacoes {
+    width: 615px;
     flex: 1;
-    padding: 3rem;
+    padding: 1rem;
 }
 
-.container__botao {
-    border-radius: 16px;
-    background: #1875E8;
-    padding: 16px 24px;
-    width: 100%;
-    font-size: 24px;
-    font-weight: 700;
-    border: none;
-    margin-top: 2rem;
+.container__texto__h1 {
+    font-family: var(--font-family-titulo); /*'Chakra Petch', sans-serif;*/
+    font-size: 72px;
+    padding-bottom: 3rem;
 }
 
-.container__texto {
-    margin: 16px 0 16px 0;
-}
-
-.container__texto-azul {
-    color: #1875E8;
+.container__texto__paragrafo {
+    font-family: var(--font-family); /*'Inter', sans-serif;*/
+    font-size: 32px;
+    font-weight: 400;
+    padding-bottom: 2rem;
 }
 
 .container__input {
+    display: flex;
+}
+
+.container__input__input {
     width: 100%;
-    height: 72px;
+    height: 52px;
     border-radius: 16px;
     background-color: #FFF;
     border: none;
@@ -80,22 +91,17 @@ body::before {
     padding: 2rem;
     font-size: 24px;
     font-weight: 700;
-    font-family: 'Inter', sans-serif;
-}
-
-.container__botoes {
-    display: flex;
-    gap: 2em;
+    font-family: var(--font-family); /*'Inter', sans-serif;*/
 }
 
 .container__label {
-    display: block;
-    margin-top: 8px;
-    font-size: 16px;
-    font-weight: 400;
-    font-family: 'Inter', sans-serif;
-    color: #FFF;
-    opacity: 0.8;
+    display: flex;
+}
+
+.container__label__label {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: var(--font-family); /*'Inter', sans-serif;*/
 }
 
 .label-verde {
@@ -108,57 +114,39 @@ body::before {
     font-weight: bold;
 }
 
-h1 {
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 72px;
-    padding-bottom: 3rem;
+.container__botao {
+    border-radius: 16px;
+    background: #1875E8;
+    padding: 16px 24px;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: var(--font-family); /*'Inter', sans-serif;*/
+    border: none;
+    margin-top: 2rem;
+}
+.container__botoes {
+    display: flex;
+    gap: 2em;
 }
 
-p,
-button {
-    font-family: 'Inter', sans-serif;
-}
-
-.texto__paragrafo {
-    font-size: 32px;
-    font-weight: 400;
+.container__imagem{
+    display: flex;
+    padding: 0 16px;
 }
 
 .container__imagem-interrogacao {
     height: 600px;
     width: 600px;
     border-radius: 16px;
-    /*object-fit: cover;*/
 }
 
 button:disabled {
     background-color: gray;
+    cursor: not-allowed; /* Mostra que o botão está desativado */
 }
 
-@media screen and (max-width: 1250px) {
-
-    h1 {
-        font-size: 50px;
-    }
-
-    .container__botao {
-        font-size: 16px;
-    }
-
-    .texto__paragrafo {
-        font-size: 24px;
-    }
-
-    .container__imagem-interrogacao {
-        display: block;
-    }
-
-    .container__conteudo {
-        display: block;
-        position: inherit;
-    }
-
-    .container__informacoes {
-        padding: 1rem
-    }
+.container__botoes button:not(:disabled):hover {
+    cursor: pointer;
+    background-color: var(--botao--azul-hover)
 }

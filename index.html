@@ -16,7 +16,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Realiza a pré-conexão para carregar as fontes mais rapidamente -->
 
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap"
+        rel="stylesheet">
     <!-- Importa fontes do Google Fonts -->
 
     <link rel="stylesheet" href="style.css">
@@ -27,42 +28,48 @@
 </head>
 
 <body>
-    <div class="container">
+
+    <head></head>
+    <main class="container">
         <!-- Container principal para organizar o layout -->
-        <div class="container__conteudo">
-            <!-- Container para o conteúdo principal -->
-            <div class="container__informacoes">
-                <!-- Container para os textos e entradas -->
 
-                <div class="container__texto">
-                    <!-- Container para o título e descrição -->
-                    <h1>Jogo do número secreto</h1>
-                    <!-- Cabeçalho principal do jogo -->
-                    <p class="texto__paragrafo">Escolha um número entre 1 e 10</p>
-                    <!-- Texto explicativo do jogo -->
-                </div>
+        <section class="container__informacoes">
+            <!-- Container para os textos e entradas -->
 
-                <input type="number" id="chute" min="1" max="10" class="container__input">
+
+            <!-- Container para o título e descrição -->
+            <h1 class="container__texto__h1">Jogo do número secreto</h1>
+            <!-- Cabeçalho principal do jogo -->
+            <p class="container__texto__paragrafo">Escolha um número entre 1 e 10</p>
+            <!-- Texto explicativo do jogo -->
+
+            <div class="container__input">
+                <input class="container__input__input" type="number" id="chute" min="1" max="10">
                 <!-- Campo para o jogador inserir o número -->
-
-                <label id="mensagem" class="container__label"></label>
-                <!-- Elemento para exibir mensagens ao usuário -->
-
-                <div class="chute container__botoes">
-                    <!-- Botões de interação -->
-                    <button onclick="verificarChute()" id="btnChutar" class="container__botao">Chutar</button>
-                    <!-- Botão para enviar o palpite -->
-
-                    <button onclick="reiniciarJogo()" id="btnReiniciar" class="container__botao" disabled>Novo jogo</button>
-                    <!-- Botão para reiniciar o jogo, desativado inicialmente -->
-                </div>
             </div>
 
-            <img class="container__imagem-interrogacao" src="./img/Qual_Nro.webp" alt="Um círculo com vários pontos de interrogação" />
+            <div class="container__label">
+                <label id="mensagem" class="container__label__label"></label>
+                <!-- Elemento para exibir mensagens ao usuário -->
+            </div>
+
+            <div class="container__botoes">
+                <!-- Botões de interação -->
+                <button onclick="verificarChute()" id="btnChutar" class="container__botao">Chutar</button>
+                <!-- Botão para enviar o palpite -->
+
+                <button onclick="reiniciarJogo()" id="btnReiniciar" class="container__botao" disabled>Novo jogo</button>
+                <!-- Botão para reiniciar o jogo, desativado inicialmente -->
+            </div>
+        </section>
+
+        <div class="container__imagem">
+            <img class="container__imagem-interrogacao" src="./img/Qual_Nro.webp"
+                alt="Um círculo com vários pontos de interrogação" />
             <!-- Imagem decorativa ao lado dos elementos -->
         </div>
-    </div>
-
+    </main>
+    <footer></footer>
     <script src="app.js" defer></script>
     <!-- Conecta o arquivo JavaScript externo -->
 </body>

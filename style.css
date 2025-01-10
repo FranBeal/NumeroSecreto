@@ -6,11 +6,11 @@
     /*Define a cor do texto como branca para todos os elementos.*/
 }
 
-:root{
+:root {
     --font-family: 'Inter', sans-serif;
     --font-family-titulo: 'Chakra Petch', sans-serif;
     --botao--azul-hover: #348efb;
-    /*teste*/
+    --fundo_degrade: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
 }
 
 body {
@@ -25,7 +25,7 @@ body {
     Quando usamos box-sizing: border-box;, isso muda o comportamento:
       - A largura e altura do elemento incluem o conteúdo, o preenchimento (padding) e as bordas.
       - Isso facilita o controle do tamanho total do elemento, especialmente quando queremos evitar que o padding e a borda "empurrem" o tamanho do elemento para além do especificado.*/
-    background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%);
+    background: var(--fundo_degrade);
 }
 
 /*Tutorial sobre flexbox: A complete Guide to Flexbox*/
@@ -66,13 +66,15 @@ body::before {
 }
 
 .container__texto__h1 {
-    font-family: var(--font-family-titulo); /*'Chakra Petch', sans-serif;*/
+    font-family: var(--font-family-titulo);
+    /*'Chakra Petch', sans-serif;*/
     font-size: 72px;
     padding-bottom: 3rem;
 }
 
 .container__texto__paragrafo {
-    font-family: var(--font-family); /*'Inter', sans-serif;*/
+    font-family: var(--font-family);
+    /*'Inter', sans-serif;*/
     font-size: 32px;
     font-weight: 400;
     padding-bottom: 2rem;
@@ -92,7 +94,8 @@ body::before {
     padding: 2rem;
     font-size: 24px;
     font-weight: 700;
-    font-family: var(--font-family); /*'Inter', sans-serif;*/
+    font-family: var(--font-family);
+    /*'Inter', sans-serif;*/
 }
 
 .container__label {
@@ -102,7 +105,8 @@ body::before {
 .container__label__label {
     font-size: 24px;
     font-weight: 700;
-    font-family: var(--font-family); /*'Inter', sans-serif;*/
+    font-family: var(--font-family);
+    /*'Inter', sans-serif;*/
 }
 
 .label-verde {
@@ -122,16 +126,18 @@ body::before {
     width: 100%;
     font-size: 24px;
     font-weight: 700;
-    font-family: var(--font-family); /*'Inter', sans-serif;*/
+    font-family: var(--font-family);
+    /*'Inter', sans-serif;*/
     border: none;
     margin-top: 2rem;
 }
+
 .container__botoes {
     display: flex;
     gap: 2em;
 }
 
-.container__imagem{
+.container__imagem {
     display: flex;
     padding: 0 16px;
 }
@@ -144,10 +150,149 @@ body::before {
 
 button:disabled {
     background-color: gray;
-    cursor: not-allowed; /* Mostra que o botão está desativado */
+    cursor: not-allowed;
+    /* Mostra que o botão está desativado */
 }
 
 .container__botoes button:not(:disabled):hover {
     cursor: pointer;
     background-color: var(--botao--azul-hover)
+}
+
+@media screen and (max-width: 844px) {
+    .container {
+        flex-direction: column;
+        margin: 5%;
+        padding: 1rem;
+        /* Adiciona um padding interno para evitar margens desiguais */
+        align-items: center;
+        /* Centraliza os itens no eixo horizontal */
+        background-size: 100% 100% 100% 100%;
+    }
+
+    .container__informacoes {
+        width: 100%;
+    }
+
+    .container__texto__h1 {
+        font-size: 32px;
+    }
+
+    .container__texto__paragrafo {
+        font-size: 16px;
+    }
+
+    .container__input {
+        flex-direction: column;
+    }
+
+    .container__input__input {
+        /*width: 100%;*/
+        box-sizing: border-box;
+        /* Inclui padding e borda na largura total */
+        font-size: 16px;
+    }
+
+    .container__label {
+        flex-direction: column;
+    }
+
+    .container__label__label {
+        font-size: 16px;
+    }
+
+    .container__botao {
+        width: 100%;
+    }
+
+    .container__imagem {
+        display: flex;
+        justify-content: center;
+        /* Centraliza horizontalmente */
+        order: -1;
+        /* Move a imagem para o início no layout flex */
+        width: 100%;
+        /* Garante que ocupe toda a largura */
+        padding: 0;
+        /* Remove padding lateral */
+        margin-bottom: 2rem;
+        /* Adiciona espaço abaixo da imagem */
+    }
+
+    .container__imagem-interrogacao {
+        width: 100%;
+        /* Ajusta a largura para caber no container */
+        height: auto;
+        /* Mantém a proporção da imagem */
+        max-width: 250px;
+        /* Limita o tamanho máximo da imagem */
+    }
+}
+
+@media screen and (max-width: 1336px) {
+    .container {
+        flex-direction: column; /* Ajusta para layout em coluna, se necessário */
+        margin: 5%;
+        padding: 1rem;
+        /* Adiciona um padding interno para evitar margens desiguais */
+        align-items: center;
+        /* Centraliza os itens no eixo horizontal */
+        background-size: 100% 100%;
+    }
+
+    .container__informacoes {
+        width: 100%;
+    }
+
+    .container__texto__h1 {
+        font-size: 48px;
+    }
+
+    .container__texto__paragrafo {
+        font-size: 24px;
+    }
+
+    .container__input {
+        flex-direction: column;
+    }
+
+    .container__input__input {
+        /*width: 100%;*/
+        box-sizing: border-box;
+        /* Inclui padding e borda na largura total */
+        font-size: 24px;
+    }
+
+    .container__label {
+        flex-direction: column;
+    }
+
+    .container__label__label {
+        font-size: 24px;
+    }
+
+    .container__botao {
+        width: 100%;
+    }
+
+    .container__imagem {
+        display: flex;
+        justify-content: center;
+        /* Centraliza horizontalmente */
+        order: -1;
+        /* Move a imagem para o início no layout flex */
+        width: 80%;
+        /* Garante que ocupe toda a largura */
+        padding: 0;
+        /* Remove padding lateral */
+        margin-bottom: 1rem;
+        /* Adiciona espaço abaixo da imagem */
+    }
+
+    .container__imagem-interrogacao {
+        width: 100%; /* Ajusta a largura para caber no container */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+   
+    
 }
